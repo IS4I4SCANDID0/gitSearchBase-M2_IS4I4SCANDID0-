@@ -11,13 +11,21 @@ export async function getUsers() {
   return gitHubUsers
 }
 
- 
-export async function percorreArray() {
+ //DEBUGAR COM URGÊNCIASS
+// export async function verifyUser() {
+//   const searchInput = document.querySelector('form > input')
+//   const sendSurvey = document.querySelector('form > button')
+//   // console.log(searchInput.value)
+//   const results = await getUsers()
+//   results.map(user => {
+//     const memberGitHub = user.login
+//     console.log(memberGitHub)
+//   });
 
-  const resulta = await getUsers()
-  resulta.forEach(user => {
-    // user.type
-    console.log(user.avatar_url)
-  });
-  return resulta
-}
+//   sendSurvey.addEventListener('click', (event) => {
+//     event.preventDefault()
+
+    
+//   })
+ 
+// }

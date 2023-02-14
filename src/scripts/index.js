@@ -1,3 +1,3 @@
-import { getUsers, percorreArray } from "./homePage.js";
+import { verifyUser } from "./homePage.js";
 
-console.log(await percorreArray())
+await verifyUser()

@@ -7,6 +7,8 @@
   --color-grey-4: #373b3e;
   --color-grey-6: #a6a8a9;
   --color-grey-7: #ffffff;
+  --color-placeholder: rgba(255, 255, 255, 0.5);
+  --background-input: rgba(25, 28, 31, 1);
   --color-alert: #c22554;
   --radius-card: 0.5rem;
   --radius-linkBtn: 0.25rem;
