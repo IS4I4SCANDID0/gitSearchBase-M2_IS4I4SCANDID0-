@@ -12,3 +12,12 @@ export async function getUsers() {
 }
 
  
+export async function percorreArray() {
+
+  const resulta = await getUsers()
+  resulta.forEach(user => {
+    // user.type
+    console.log(user.avatar_url)
+  });
+  return resulta
+}

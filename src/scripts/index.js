@@ -1,3 +1,3 @@
-import { getUsers } from "./homePage.js";
+import { getUsers, percorreArray } from "./homePage.js";
 
-console.log(await getUsers())
+console.log(await percorreArray())
