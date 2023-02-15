@@ -2,7 +2,24 @@
   background-color: var(--color-grey-1);
   display: flex;
   align-items: center;
+  justify-content: space-around;
+  padding:  3rem 0;
+  height: 300px;
 }
+
+
+.header__user {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.header__user > h2 {
+  color: var(--color-grey-7);
+  font-size: 1.45rem;
+  font-weight: 700;
+}
+
 
 img {
   width: 80px;
@@ -10,17 +27,42 @@ img {
   border: solid 2px var(--color-brand-2);
   border-radius: 100%;
   object-fit: fill;
-  /* object-position: ; */
 }
 
 
-.container__header > h2 {
-  color: var(--color-grey-7);
+.container__main {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
 }
 
-/* img {
-  max-width: 100%;
+.main__list {
+  border: solid 1px orangered;
+  width: 51.25rem;
+  display: flex;
   max-height: 100%;
-  border-radius: 100%;
-  
-} 
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 1.5rem;
+  /* padding: 1rem; */
+}
+
+
+.list--card {
+  border: solid 0.125rem var(--color-place-tx-card);
+  width: 397px;
+  height: 230px;
+  padding: 1.3rem;
+  border-radius: var(--radius-card);
+  color: var(--color-place-tx-card);
+  font-size: 0.875rem;
+  gap: 1rem;
+}
+
+
+.list--card > h3 {
+  color: var(--color-grey-7);
+  font-size: 1.25rem;
+  font-weight: 500;
+}

@@ -65,19 +65,19 @@
 form > input {
   height: 2.37rem;
   background-color: var(--background-input);
-  border: solid 1px var(--color-placeholder);
+  border: solid 1px var(--color-place-tx-card);
   border-radius: var(--radius-linkBtn);
-  color: var(--color-placeholder);
+  color: var(--color-place-tx-card);
 }
 
 input::placeholder {
   padding-left: 0.5rem;
-  color: var(--color-placeholder);
+  color: var(--color-place-tx-card);
 }
 
 input:focus {
   border: solid 1px var(--color-brand-2);
-  color: var(--color-placeholder);
+  color: var(--color-place-tx-card);
   outline: none;
   padding-left: 0.5rem;
   transition: 1s ease;
