@@ -7,7 +7,8 @@ export async function searchUser() {
   sendSurvey.addEventListener('click', async (event) => {
     event.preventDefault()
 
-    const searchResult = await surveyUser(searchInput.value)
+    const searchResult = await surveyUser(searchInput.value.toUpperCase().trim())
   })
- 
 }
+ 
+

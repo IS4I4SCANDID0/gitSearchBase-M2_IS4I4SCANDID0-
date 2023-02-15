@@ -21,16 +21,39 @@ export async function surveyUser(userName) {
     }
   })
   .then(response => response.json())
-  .then(res => {
+  .then(response => {
     
-    if(res.login){
-      window.location.replace('/src/pages/profile.html')
-
+    if(response.login){
+      // window.location.replace('/src/pages/profile.html')
+      
     } else {
       window.location.replace('/src/pages/error.html')
     }
+    
+    // return res
   })
   .catch(error => console.log(error))
 
+  getRepository(userName)
+
   return gitUser
+}
+
+
+
+export async function getRepository(userName) {
+  const gitRepos = await fetch(`https://api.github.com/users/${userName}/repos`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  }) 
+  .then(response => response.json())
+  .then(res => {
+    
+    return res
+  })
+  .catch(error => console.log(error))
+  
+  return gitRepos
 }
