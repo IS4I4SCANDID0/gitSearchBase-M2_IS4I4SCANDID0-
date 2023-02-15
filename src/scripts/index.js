@@ -1,3 +1,3 @@
-import { verifyUser } from "./homePage.js";
+import { searchUser } from "./homePage.js";
 
-await verifyUser()
+searchUser()
