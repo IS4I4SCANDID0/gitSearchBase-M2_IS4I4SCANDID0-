@@ -1,3 +1,40 @@
 body {
-  color: greenyellow;
+  display: flex;
+}
+
+.container__errorDesc {
+  color: var(--color-grey-7);
+  width: 45%;
+  height: 450px;
+  border: solid 1px salmon;
+}
+
+
+.container__image {
+  border: solid 1px deepskyblue;
+  width: 35%;
+  height: 450px;
+  position: relative;
+}
+
+.image--card-cherry {
+  position: absolute;
+  top: 0;
+  left: 40px;
+  z-index: 2;
+}
+
+.image--card-purple {
+  position: absolute;
+  top: 35px;
+  right: 0;
+  z-index: 1;
+}
+
+
+.image--card-alert {
+  position: absolute;
+  z-index: 3;
+  top: 100px;
+  right: 170px;
 }

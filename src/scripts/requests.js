@@ -24,7 +24,7 @@ export async function surveyUser(userName) {
   .then(response => {
     
     if(response.login){
-      // window.location.replace('/src/pages/profile.html')
+      window.location.replace('/src/pages/psrofile.html')
       
     } else {
       window.location.replace('/src/pages/error.html')
@@ -50,7 +50,7 @@ export async function getRepository(userName) {
   }) 
   .then(response => response.json())
   .then(res => {
-    
+    console.log(res)
     return res
   })
   .catch(error => console.log(error))
