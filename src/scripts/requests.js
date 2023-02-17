@@ -20,18 +20,16 @@ export async function surveyUser(userName) {
       'Content-Type': 'application/json'
     }
   })
-  .then(response => response.json())
   .then(response => {
-    
-    if(response.login){
-      window.location.replace('/src/pages/psrofile.html')
-      
+    if(response.ok){
+      response.json().then(response => localStorage.setItem('user', JSON.stringify(response))) 
+
+      window.location.replace('./src/pages/profile.html')
     } else {
-      window.location.replace('/src/pages/error.html')
+      
+      window.location.replace('./src/pages/error.html')
     }
-    
-    // return res
-  })
+  }) 
   .catch(error => console.log(error))
 
   getRepository(userName)
@@ -39,6 +37,11 @@ export async function surveyUser(userName) {
   return gitUser
 }
 
+      
+    
+
+    
+    
 
 
 export async function getRepository(userName) {
@@ -50,7 +53,7 @@ export async function getRepository(userName) {
   }) 
   .then(response => response.json())
   .then(res => {
-    console.log(res)
+    // console.log(res)
     return res
   })
   .catch(error => console.log(error))

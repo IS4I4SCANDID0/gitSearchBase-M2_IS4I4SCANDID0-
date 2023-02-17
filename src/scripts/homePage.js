@@ -1,14 +1,20 @@
 import { surveyUser } from "./requests.js"
 
-export async function searchUser() {
+// import { getRepository } from "./requests.js"
+
+// getRepository(userName)
+
+export function searchUser() {
   const searchInput = document.querySelector('form > input')
   const sendSurvey = document.querySelector('form > button')
   
   sendSurvey.addEventListener('click', async (event) => {
     event.preventDefault()
-
-    const searchResult = await surveyUser(searchInput.value.toUpperCase().trim())
+    
+    await surveyUser(searchInput.value)
   })
 }
+
+
  
 

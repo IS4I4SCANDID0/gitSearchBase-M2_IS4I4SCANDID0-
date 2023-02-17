@@ -1,10 +1,10 @@
 import { getRepository } from "./requests.js"
 
-getRepository
+getRepository()
 //IDENTIFICAR QUAL DADO ESTÁ SENDO PASSADO E DEBUGAR
 export function renderRepository(repositories) {
   const mainContainer = document.querySelector('.container')
-  
+  console.log(repositories)
   repositories.map(repository => {
     const cardRepos = createRepository(repository)
 
@@ -47,3 +47,5 @@ function createRepository(repository) {
 
   return userContainer
 }
+
+// renderRepository(repositories)

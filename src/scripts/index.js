@@ -1,10 +1,10 @@
 import { searchUser } from "./homePage.js";
 
-import { renderRepository } from "./profile.js";
-
-
+// import { renderRepository } from "./profile.js";
 
 searchUser()
 
-renderRepository()
+
+
+// renderRepository(repositories)
 //DEBUGAR AS CHAMADAS DAS FUNÇÕES TBM
