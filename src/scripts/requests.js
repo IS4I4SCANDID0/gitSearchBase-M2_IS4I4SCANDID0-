@@ -40,10 +40,6 @@ export async function surveyUser(userName) {
       
     
 
-    
-    
-
-
 export async function getRepository(userName) {
   const gitRepos = await fetch(`https://api.github.com/users/${userName}/repos`, {
     method: 'GET',
@@ -60,3 +56,7 @@ export async function getRepository(userName) {
   
   return gitRepos
 }
+    
+    
+
+
