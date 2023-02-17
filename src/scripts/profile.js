@@ -1,11 +1,9 @@
-import { getRepository } from "./requests.js"
-
-getRepository()
-//IDENTIFICAR QUAL DADO ESTÁ SENDO PASSADO E DEBUGAR
-export function renderRepository(repositories) {
+export function renderRepository() {
   const mainContainer = document.querySelector('.container')
+  
+  const repositories = JSON.parse(localStorage.getItem('userRepos'))
   console.log(repositories)
-  repositories.map(repository => {
+  repositories.forEach(repository => {
     const cardRepos = createRepository(repository)
 
     mainContainer.appendChild(cardRepos)
@@ -48,4 +46,3 @@ function createRepository(repository) {
   return userContainer
 }
 
-// renderRepository(repositories)

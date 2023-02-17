@@ -21,36 +21,41 @@ export async function surveyUser(userName) {
     }
   })
   .then(response => {
-    if(response.ok){
-      response.json().then(response => localStorage.setItem('user', JSON.stringify(response))) 
+    if(response.ok) {
+      response.json().then(responseJson => {
 
-      window.location.replace('./src/pages/profile.html')
+        localStorage.setItem('gitHubUser', JSON.stringify(responseJson))
+
+
+        window.location.replace('./src/pages/profile.html')
+      })
+    
     } else {
-      
+
       window.location.replace('./src/pages/error.html')
+
     }
-  }) 
+  })
   .catch(error => console.log(error))
-
-  getRepository(userName)
-
-  return gitUser
 }
+ 
+
+
+
 
       
     
 
-export async function getRepository(userName) {
-  const gitRepos = await fetch(`https://api.github.com/users/${userName}/repos`, {
+export async function getRepository(user) {
+  const gitRepos = await fetch(`https://api.github.com/users/${user}/repos`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json'
     }
   }) 
   .then(response => response.json())
-  .then(res => {
-    // console.log(res)
-    return res
+  .then(resJson => {
+    console.log(resJson)
   })
   .catch(error => console.log(error))
   
@@ -58,5 +63,8 @@ export async function getRepository(userName) {
 }
     
     
+//localStorage.setItem('userRepos', JSON.stringify(resJson)))
 
-
+ // localStorage.setItem('gitHubUserLogin', JSON.stringify(response.login))
+        // const user = JSON.parse(localStorage.getItem('gitUser'))
+        // getRepository(user)
