@@ -1,8 +1,4 @@
-import { surveyUser } from "./requests.js"
-
-// import { getRepository } from "./requests.js"
-
-// getRepository(userName)
+import { getRepository, surveyUser } from "./requests.js"
 
 export function searchUser() {
   const searchInput = document.querySelector('form > input')
@@ -12,9 +8,12 @@ export function searchUser() {
     event.preventDefault()
     
     await surveyUser(searchInput.value)
+
+    await getRepository(searchInput.value)
+    
   })
 }
-searchUser()
+
 
  
 

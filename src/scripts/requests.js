@@ -12,6 +12,9 @@
 //   return gitHubUsers
 // }
 
+import { searchUser } from "./homePage.js"
+
+// searchUser()
 
 export async function surveyUser(userName) {
   const gitUser = await fetch(`https://api.github.com/users/${userName}`, {
@@ -26,27 +29,26 @@ export async function surveyUser(userName) {
 
         localStorage.setItem('gitHubUser', JSON.stringify(responseJson))
 
-
-        window.location.replace('./src/pages/profile.html')
+        console.log(responseJson)
+        // window.location.replace('./src/pages/profile.html')
       })
     
     } else {
 
-      window.location.replace('./src/pages/error.html')
+      // window.location.replace('./src/pages/error.html')
 
     }
   })
   .catch(error => console.log(error))
+
+  return gitUser
 }
  
 
 
 
-
-      
-    
-
 export async function getRepository(user) {
+
   const gitRepos = await fetch(`https://api.github.com/users/${user}/repos`, {
     method: 'GET',
     headers: {
@@ -55,16 +57,27 @@ export async function getRepository(user) {
   }) 
   .then(response => response.json())
   .then(resJson => {
+    
+    localStorage.setItem('userRepos', JSON.stringify(resJson))
+    
+    // const user = JSON.parse(localStorage.getItem('gitHubUser'))
     console.log(resJson)
   })
   .catch(error => console.log(error))
-  
+
   return gitRepos
 }
-    
-    
-//localStorage.setItem('userRepos', JSON.stringify(resJson)))
 
- // localStorage.setItem('gitHubUserLogin', JSON.stringify(response.login))
-        // const user = JSON.parse(localStorage.getItem('gitUser'))
-        // getRepository(user)
+
+  
+ 
+
+
+      
+    
+
+    
+
+
+
+// localStorage.setItem('gitHubUserLogin', JSON.stringify(response.login))

@@ -1,9 +1,11 @@
-export function renderRepository() {
+// import { getRepository } from "./requests.js"
+
+export async function renderRepository() {
   const mainContainer = document.querySelector('.container')
-  
+  //revisar a sintaxe
   const repositories = JSON.parse(localStorage.getItem('userRepos'))
-  console.log(repositories)
-  repositories.forEach(repository => {
+
+  repositories.map(repository => {
     const cardRepos = createRepository(repository)
 
     mainContainer.appendChild(cardRepos)
@@ -46,3 +48,4 @@ function createRepository(repository) {
   return userContainer
 }
 
+renderRepository()
