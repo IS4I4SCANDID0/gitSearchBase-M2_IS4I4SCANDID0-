@@ -12,7 +12,7 @@
 //   return gitHubUsers
 // }
 
-import { searchUser } from "./homePage.js"
+// import { searchUser } from "./homePage.js"
 
 // searchUser()
 
@@ -29,7 +29,6 @@ export async function surveyUser(userName) {
 
         localStorage.setItem('gitHubUser', JSON.stringify(responseJson))
 
-        console.log(responseJson)
         // window.location.replace('./src/pages/profile.html')
       })
     
@@ -41,7 +40,7 @@ export async function surveyUser(userName) {
   })
   .catch(error => console.log(error))
 
-  return gitUser
+  // return gitUser
 }
  
 
@@ -55,19 +54,26 @@ export async function getRepository(user) {
       'Content-Type': 'application/json'
     }
   }) 
-  .then(response => response.json())
-  .then(resJson => {
-    
-    localStorage.setItem('userRepos', JSON.stringify(resJson))
-    
-    // const user = JSON.parse(localStorage.getItem('gitHubUser'))
-    console.log(resJson)
+  .then(response => {
+
+    response.json().then(responseJson => {
+
+      const user = JSON.parse(localStorage.getItem('gitHubUser'))
+      console.log(user)
+      localStorage.setItem('userRepos', JSON.stringify(responseJson))
+     
+    })
   })
   .catch(error => console.log(error))
-
-  return gitRepos
+  
+  // return gitRepos
 }
-
+    
+    
+    
+    
+    
+// getRepository('user')
 
   
  

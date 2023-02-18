@@ -10,7 +10,6 @@ export function searchUser() {
     await surveyUser(searchInput.value)
 
     await getRepository(searchInput.value)
-    
   })
 }
 
