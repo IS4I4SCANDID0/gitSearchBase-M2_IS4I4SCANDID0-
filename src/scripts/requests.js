@@ -58,8 +58,7 @@ export async function getRepository(user) {
 
     response.json().then(responseJson => {
 
-      const user = JSON.parse(localStorage.getItem('gitHubUser'))
-      console.log(user)
+      
       localStorage.setItem('userRepos', JSON.stringify(responseJson))
      
     })
