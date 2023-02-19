@@ -27,22 +27,22 @@ export async function surveyUser(userName) {
     if(response.ok) {
       response.json().then(responseJson => {
 
-        localStorage.setItem('gitHubUser', JSON.stringify(responseJson))
+        localStorage.setItem('gitHubUser', JSON.stringify(responseJson.login))
 
-        // window.location.replace('./src/pages/profile.html')
+        window.location.replace('./src/pages/profile.html')
       })
     
     } else {
 
-      // window.location.replace('./src/pages/error.html')
-
+      window.location.replace('./src/pages/error.html')
     }
   })
   .catch(error => console.log(error))
-
   // return gitUser
 }
+
  
+
 
 
 
