@@ -2,24 +2,66 @@
 //fazer com outra lógica de renderização, fazendo uma função para renderiazar o usuário e outra para 
 //renderizar os repositórios **ver a aula do canvas que ensina a fazer o fetch(), fazer com isertAdjasent
 
-// export async function
-{/* <div class="container__user">
-      <div class="user__info">
-        <img src="" alt="">
-        <h2>User</h2>
+export function renderUserInfo() {
+  const users = JSON.parse(localStorage.getItem('gitHubUser'))
+
+  const mainContainer = document.querySelector('.container')
+
+  users.map(user => {
+
+    mainContainer.insertAdjacentHTML('afterbegin', `
+      <div class="container__user">
+        <div class="user__info">
+          <img src="${user.avatar_url}" alt="">
+          <h2>${user.name}</h2>
+        </div>
+      <button id="newSearch">Trocar de usuário</button>
+      </div> 
+    `)
+  })
+}
+
+renderUserInfo()
+  
+
+export function renderRepository() {
+  const repositories = JSON.parse(localStorage.getItem('userRepos'))
+  
+  const mainContainer = document.querySelector('.container')
+
+  repositories.map(repository => {
+
+    mainContainer.insertAdjacentHTML('beforeend', `
+      <div class="user__card">
+        <h3>${repository.name}</h3>
+        <p>${repository.description}</p>
+        <a href="${html_url}">Repositório</a>
       </div>
-      <button>Trocar de usuário</button>
-    </div> */}
+    `)
+  })
+} 
+
+renderRepository()
 
 
-// export async function renderRepository() {
-//   const repositories = JSON.parse(localStorage.getItem('userRepos'))
+
+
+
+
+
+
+
+
+
 //   console.log(repositories)
 
-//   const user = JSON.parse(localStorage.getItem('gitHubUser'))
-  
-//   //revisar a sintaxe
-//   const mainContainer = document.querySelector('.container')
+
+
+
+
+
+
+
 
 //   repositories.map(repository => {
 //     const cardRepos = createRepository(repository)
@@ -40,10 +82,10 @@
 
 //   const userAvatar = document.createElement('img')
 //   userAvatar.src = repository.avatar_url
-  
+
 //   const userName = document.createElement('h2')
 //   userName.innerText = repository.login
-  
+
 //   user.append(userAvatar, userName)
 
 //   // const homePageBtn = document.createElement('button')
@@ -67,5 +109,3 @@
 
 //   return userContainer
 // }
-
-renderRepository()
