@@ -35,7 +35,7 @@ export function renderRepository() {
       <div class="user__card">
         <h3>${repository.name}</h3>
         <p>${repository.description}</p>
-        <a href="${html_url}">Repositório</a>
+        <a href="${repository.html_url}">Repositório</a>
       </div>
     `)
   })
