@@ -3,13 +3,13 @@
 //renderizar os repositórios **ver a aula do canvas que ensina a fazer o fetch(), fazer com isertAdjasent
 
 export function renderUserInfo() {
-  const users = JSON.parse(localStorage.getItem('GitHubUser'))
-  
   const mainContainer = document.querySelector('.container')
   
+  const users = JSON.parse(localStorage.getItem('GitHubUser')) || []
+  console.log(users)
+  
   users.map(user => {
-    // console.log(users)
-    mainContainer.insertAdjacentHTML('afterbegin', `
+    mainContainer.insertAdjacentHTML('beforeend', `
       <div class="container__user">
         <div class="user__info">
           <img src="${user.avatar_url}" alt="">
@@ -26,12 +26,12 @@ renderUserInfo()
   
 
 export function renderRepository() {
-  const repositories = JSON.parse(localStorage.getItem('userRepos'))
-  
   const mainContainer = document.querySelector('.container')
   
+  const repositories = JSON.parse(localStorage.getItem('userRepos')) || []
+  console.log(repositories)
+  
   repositories.map(repository => {
-    console.log(repositories)
     mainContainer.insertAdjacentHTML('beforeend', `
       <div class="user__card">
         <h3>${repository.name}</h3>

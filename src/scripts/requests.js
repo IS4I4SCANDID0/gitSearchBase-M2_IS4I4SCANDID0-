@@ -27,7 +27,7 @@ export async function surveyUser(userName) {
     if(response.ok) {
       response.json().then(responseJson => {
         console.log(responseJson)
-        localStorage.setItem('GitHubUser', JSON.stringify(responseJson.login))
+        localStorage.setItem('GitHubUser', JSON.stringify(responseJson))
         
         window.location.replace('./src/pages/profile.html')
       })
@@ -58,6 +58,7 @@ export async function getRepository(user) {
     }
   }) 
   .then(response => {
+    console.log(response)
     response.json().then(respJson => {
       console.log(respJson)
       localStorage.setItem('userRepos', JSON.stringify(respJson))

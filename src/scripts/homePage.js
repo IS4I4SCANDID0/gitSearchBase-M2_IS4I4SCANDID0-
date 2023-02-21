@@ -13,9 +13,9 @@ export function searchUser() {
       window.location.replace('./')
     }
     
-    await surveyUser(searchInput.value)
+    await surveyUser(input.value)
 
-    // await getRepository(searchInput.value)
+    await getRepository(input.value)
   })
 }
 
@@ -23,3 +23,7 @@ export function searchUser() {
  
 //JSON.parse(localStorage.getItem('GitHubUser'))
 //JSON.parse(localStorage.getItem('userRepos'))
+
+//
+//searchInput.value
+//searchInput.value
