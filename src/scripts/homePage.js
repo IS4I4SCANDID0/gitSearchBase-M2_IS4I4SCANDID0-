@@ -15,6 +15,7 @@ export function searchUser() {
     
     await surveyUser(searchInput.value)
 
+
     await getRepository(searchInput.value)
   })
 }
@@ -23,3 +24,7 @@ export function searchUser() {
  
 //JSON.parse(localStorage.getItem('GitHubUser'))
 //JSON.parse(localStorage.getItem('userRepos'))
+
+//
+//searchInput.value
+//searchInput.value

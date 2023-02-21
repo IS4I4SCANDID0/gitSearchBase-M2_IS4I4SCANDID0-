@@ -28,8 +28,12 @@ export async function surveyUser(userName) {
     localStorage.setItem('GitHubUser', JSON.stringify(responseJson))
     
     if(response.ok) {
-      console.log(response)
-      window.location.replace('./src/pages/profile.html')
+      response.json().then(responseJson => {
+        console.log(responseJson)
+        localStorage.setItem('GitHubUser', JSON.stringify(responseJson.login))
+        
+        window.location.replace('./src/pages/profile.html')
+      })
       
     } else {
       window.location.replace('./src/pages/error.html')
@@ -54,11 +58,11 @@ export async function getRepository(user) {
       'Content-Type': 'application/json'
     }
   }) 
-  .then(response => response.json())
-  .then(resJson => {
-    localStorage.setItem('UserRepos', JSON.stringify(resJson))
-
-    return resJson
+  .then(response => {
+    response.json().then(respJson => {
+      console.log(respJson)
+      localStorage.setItem('userRepos', JSON.stringify(respJson))
+    })
   })
   
   // .then(response => {

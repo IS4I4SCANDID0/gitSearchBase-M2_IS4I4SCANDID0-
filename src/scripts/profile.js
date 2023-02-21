@@ -3,21 +3,21 @@
 //renderizar os repositórios **ver a aula do canvas que ensina a fazer o fetch(), fazer com isertAdjasent
 
 export function renderUserInfo() {
-  const users = JSON.parse(localStorage.getItem('GitHubUser'))
-
   const mainContainer = document.querySelector('.container')
-
+  
+  const users = JSON.parse(localStorage.getItem('GitHubUser')) || []
+  console.log(users)
+  
   users.map(user => {
-    // console.log(users)
     mainContainer.insertAdjacentHTML('beforeend', `
-        <div class="container__user">
-          <div class="user__info">
-            <img src="${user.avatar_url}" alt="">
-            <h2>${user.name}</h2>
-          </div>
-        <button id="newSearch">Trocar de usuário</button>
-        </div> 
-      `)
+      <div class="container__user">
+        <div class="user__info">
+          <img src="${user.avatar_url}" alt="">
+          <h2>${user.name}</h2>
+        </div>
+      <button id="newSearch">Trocar de usuário</button>
+      </div> 
+    `)
   })
 }
 
