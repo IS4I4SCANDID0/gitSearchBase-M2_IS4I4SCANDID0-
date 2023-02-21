@@ -6,13 +6,20 @@ export function searchUser() {
  
   sendSurvey.addEventListener('click', async (event) => {
     event.preventDefault()
+
+    if(searchInput.value === '') {
+      alert("Prencha o campo solicitado")
+
+      window.location.replace('./')
+    }
     
     await surveyUser(searchInput.value)
 
-    await getRepository(searchInput.value)
+    // await getRepository(searchInput.value)
   })
 }
 
 
  
-
+//JSON.parse(localStorage.getItem('GitHubUser'))
+//JSON.parse(localStorage.getItem('userRepos'))

@@ -17,7 +17,7 @@
 // searchUser()
 
 export async function surveyUser(userName) {
-  const gitUser = await fetch(`https://api.github.com/users/${userName}`, {
+  const gitUser = await fetch(`https://api.github.com/users/${userName.toString()}`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json'
@@ -26,22 +26,25 @@ export async function surveyUser(userName) {
   .then(response => {
     if(response.ok) {
       response.json().then(responseJson => {
-
-        localStorage.setItem('gitHubUser', JSON.stringify(responseJson.login))
-
+        console.log(responseJson)
+        localStorage.setItem('GitHubUser', JSON.stringify(responseJson.login))
+        
         window.location.replace('./src/pages/profile.html')
       })
-    
+      
     } else {
-
+      
       window.location.replace('./src/pages/error.html')
     }
   })
   .catch(error => console.log(error))
-  // return gitUser
+  
+  
+  return gitUser
 }
 
- 
+// surveyUser(responseJson)
+
 
 
 
@@ -55,31 +58,31 @@ export async function getRepository(user) {
     }
   }) 
   .then(response => {
-
-    response.json().then(responseJson => {
-
-      
-      localStorage.setItem('userRepos', JSON.stringify(responseJson))
-     
+    response.json().then(respJson => {
+      console.log(respJson)
+      localStorage.setItem('userRepos', JSON.stringify(respJson))
     })
   })
   .catch(error => console.log(error))
   
-  // return gitRepos
+  return gitRepos
 }
+  
+// getRepository(respJson)     
+      
+  
+// const userResult = JSON.parse(localStorage.getItem('gitHubUser'))
+// console.log(userResult)
     
+  
     
-    
-    
-    
-// getRepository('user')
 
   
  
 
 
       
-    
+//não mexer somente esperar
 
     
 
