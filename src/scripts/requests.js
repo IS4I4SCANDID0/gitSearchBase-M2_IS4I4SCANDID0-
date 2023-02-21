@@ -23,28 +23,25 @@ export async function surveyUser(userName) {
       'Content-Type': 'application/json'
     }
   })
-  .then(response => {
+  .then(response => response.json())  
+  .then(responseJson => {
+    localStorage.setItem('GitHubUser', JSON.stringify(responseJson))
+    
     if(response.ok) {
-      response.json().then(responseJson => {
-        console.log(responseJson)
-        localStorage.setItem('GitHubUser', JSON.stringify(responseJson.login))
-        
-        window.location.replace('./src/pages/profile.html')
-      })
+      console.log(response)
+      window.location.replace('./src/pages/profile.html')
       
     } else {
-      
       window.location.replace('./src/pages/error.html')
     }
+
+    // return responseJson
   })
   .catch(error => console.log(error))
   
   
   return gitUser
 }
-
-// surveyUser(responseJson)
-
 
 
 
@@ -57,18 +54,31 @@ export async function getRepository(user) {
       'Content-Type': 'application/json'
     }
   }) 
-  .then(response => {
-    response.json().then(respJson => {
-      console.log(respJson)
-      localStorage.setItem('userRepos', JSON.stringify(respJson))
-    })
+  .then(response => response.json())
+  .then(resJson => {
+    localStorage.setItem('UserRepos', JSON.stringify(resJson))
+
+    return resJson
   })
+  
+  // .then(response => {
+  //   response.json().then(respJson => {
+  //     // console.log(respJson)
+  //   })
+  // })
   .catch(error => console.log(error))
   
   return gitRepos
 }
   
-// getRepository(respJson)     
+
+
+
+
+
+
+
+   
       
   
 // const userResult = JSON.parse(localStorage.getItem('gitHubUser'))

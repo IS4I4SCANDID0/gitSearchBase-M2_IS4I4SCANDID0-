@@ -1,10 +1,10 @@
 import { searchUser } from "./homePage.js";
 
-import { renderUserInfo ,renderRepository } from "./profile.js";
+// import { renderUserInfo ,renderRepository } from "./profile.js";
 
-renderUserInfo()
+// renderUserInfo()
 
-renderRepository()
+// renderRepository()
 
 searchUser()
 

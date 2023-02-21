@@ -4,45 +4,51 @@
 
 export function renderUserInfo() {
   const users = JSON.parse(localStorage.getItem('GitHubUser'))
-  
+
   const mainContainer = document.querySelector('.container')
-  
+
   users.map(user => {
     // console.log(users)
-    mainContainer.insertAdjacentHTML('afterbegin', `
-      <div class="container__user">
-        <div class="user__info">
-          <img src="${user.avatar_url}" alt="">
-          <h2>${user.name}</h2>
-        </div>
-      <button id="newSearch">Trocar de usuário</button>
-      </div> 
-    `)
+    mainContainer.insertAdjacentHTML('beforeend', `
+        <div class="container__user">
+          <div class="user__info">
+            <img src="${user.avatar_url}" alt="">
+            <h2>${user.name}</h2>
+          </div>
+        <button id="newSearch">Trocar de usuário</button>
+        </div> 
+      `)
   })
 }
 
 renderUserInfo()
 
-  
+
+
+
+
 
 export function renderRepository() {
-  const repositories = JSON.parse(localStorage.getItem('userRepos'))
-  
+  const repositories = JSON.parse(localStorage.getItem('UserRepos'))
+
   const mainContainer = document.querySelector('.container')
-  
+
+
   repositories.map(repository => {
-    console.log(repositories)
+    // console.log(repositories)
     mainContainer.insertAdjacentHTML('beforeend', `
-      <div class="user__card">
-        <h3>${repository.name}</h3>
-        <p>${repository.full_name} + ${repository.language}</p>
-        <a href="${repository.html_url}">Repositório</a>
-      </div>
-    `)
+        <div class="user__card">
+          <h3>${repository.name}</h3>
+          <p>${repository.full_name} + ${repository.language}</p>
+          <a href="${repository.html_url}">Repositório</a>
+        </div>
+      `)
   })
-} 
+}
 
 renderRepository()
+
+
 
 
 
@@ -107,7 +113,7 @@ renderRepository()
 
 //   // const link = document.createElement('a')
 //   // link.href(html_url)
-//   // link.innerText = 'Repositório' 
+//   // link.innerText = 'Repositório'
 
 //   return userContainer
 // }
