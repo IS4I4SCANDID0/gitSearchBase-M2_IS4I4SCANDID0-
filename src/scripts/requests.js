@@ -11,12 +11,12 @@ export async function surveyUser(userName) {
         
         localStorage.setItem('GitHubUser', JSON.stringify(responseJson))
         
-        window.location.replace('./src/pages/profile.html')
+        // window.location.replace('./src/pages/profile.html')
       })
       
     } else {
       
-      window.location.replace('./src/pages/error.html')
+      // window.location.replace('./src/pages/error.html')
     }
   })
   .catch(error => console.log(error))
