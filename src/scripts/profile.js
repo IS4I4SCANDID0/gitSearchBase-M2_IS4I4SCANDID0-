@@ -1,8 +1,7 @@
 
-
-export function renderUserInfo() {
-  const mainContainer = document.querySelector('.container')
-  
+// export function renderUserInfo(user) {
+//   const mainContainer = document.querySelector('.container')
+export function renderUserInfo(){ 
   const users = JSON.parse(localStorage.getItem('GitHubUser')) 
   console.log(users)
   

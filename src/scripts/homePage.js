@@ -1,29 +1,38 @@
-import { getRepository, surveyUser } from "./requests.js"
+// import {  getUserData, saveUserData } from "./requests.js"
 
-export function searchUser() {
-  const searchInput = document.querySelector('form > input')
-  const sendSurvey = document.querySelector('#search')
- 
-  sendSurvey.addEventListener('click', async (event) => {
-    event.preventDefault()
+// import { renderUserInfo } from "./profile.js"
 
-    if(searchInput.value === '') {
-      alert("Prencha o campo solicitado")
 
-      window.location.replace('./')
-    }
+// export async function searchUser() {
+//   const searchInput = document.querySelector('form > input')
+//   const userName = searchInput.value.toString()
+  
+//   saveUserData(searchInput.value)
+
+//   if (!userName) {
+//     alert('Por favor, insira um nome de usuário!')
+//     return
+//   }
+  
+//   try {
+//     const user = await getUserData(userName)
     
-    await surveyUser(input.value)
+//     if (user) {
+//       saveUserData(user)
 
-    await getRepository(input.value)
-  })
-}
+//       renderUserInfo(user)
+      
+//       window.location.replace('./src/pages/profile.html')
 
-
+//     } else {
+      
+//       window.location.replace('./src/pages/error.html')
+//     }
+//   } catch (error) {
+//     console.log(error)
+//   }
+// }
+      
  
 //JSON.parse(localStorage.getItem('GitHubUser'))
 //JSON.parse(localStorage.getItem('userRepos'))
-
-//
-//searchInput.value
-//searchInput.value
