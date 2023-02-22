@@ -1,10 +1,8 @@
-
-// export function renderUserInfo(user) {
-//   const mainContainer = document.querySelector('.container')
 export function renderUserInfo(){ 
   const users = JSON.parse(localStorage.getItem('GitHubUser')) 
-  console.log(users)
-  
+  // console.log(users)
+  const mainContainer = document.querySelector('.container')
+
   users.map(user => {
     mainContainer.insertAdjacentHTML('beforeend', `
       <div class="container__user">
@@ -19,14 +17,11 @@ export function renderUserInfo(){
 }
 
 
-
-  
-
 export function renderRepository() {
-  const mainContainer = document.querySelector('.container')
-  
   const repositories = JSON.parse(localStorage.getItem('userRepos')) 
-  console.log(repositories)
+  // console.log(repositories)
+  
+  const mainContainer = document.querySelector('.container')
   
   repositories.map(repository => {
     mainContainer.insertAdjacentHTML('beforeend', `

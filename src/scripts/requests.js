@@ -1,7 +1,5 @@
-
-
 export async function surveyUser(userName) {
-  const gitUser = await fetch(`https://api.github.com/users/${userName.toString()}`, {
+  const gitUser = await fetch(`https://api.github.com/users/${userName}`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json'
@@ -10,7 +8,7 @@ export async function surveyUser(userName) {
   .then(response => {
     if(response.status === 200) {
       response.json().then(responseJson => {
-        console.log(responseJson)
+        
         localStorage.setItem('GitHubUser', JSON.stringify(responseJson))
         
         window.location.replace('./src/pages/profile.html')
@@ -29,11 +27,6 @@ export async function surveyUser(userName) {
   
   return gitUser
 }
-
-// surveyUser(responseJson)
-
-
-
 
 
 export async function getRepository(user) {
@@ -55,24 +48,3 @@ export async function getRepository(user) {
   return gitRepos
 }
   
-// getRepository(respJson)     
-      
-  
-// const userResult = JSON.parse(localStorage.getItem('gitHubUser'))
-// console.log(userResult)
-    
-  
-    
-
-  
- 
-
-
-      
-//não mexer somente esperar
-
-    
-
-
-
-// localStorage.setItem('gitHubUserLogin', JSON.stringify(response.login))

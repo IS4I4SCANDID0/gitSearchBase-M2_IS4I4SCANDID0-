@@ -1,38 +1,17 @@
-// import {  getUserData, saveUserData } from "./requests.js"
+import { surveyUser, getRepository } from "./requests.js"
 
-// import { renderUserInfo } from "./profile.js"
-
-
-// export async function searchUser() {
-//   const searchInput = document.querySelector('form > input')
-//   const userName = searchInput.value.toString()
+export function searchUser() {
+  const searchInput = document.querySelector('#searchUser')
+ 
+  const searchButton = document.querySelector('#searchBtn')
   
-//   saveUserData(searchInput.value)
+  searchButton.addEventListener('click', async (event) => {
+    event.preventDefault()
 
-//   if (!userName) {
-//     alert('Por favor, insira um nome de usuário!')
-//     return
-//   }
-  
-//   try {
-//     const user = await getUserData(userName)
-    
-//     if (user) {
-//       saveUserData(user)
+    await surveyUser(searchInput.value)
 
-//       renderUserInfo(user)
-      
-//       window.location.replace('./src/pages/profile.html')
-
-//     } else {
-      
-//       window.location.replace('./src/pages/error.html')
-//     }
-//   } catch (error) {
-//     console.log(error)
-//   }
-// }
+    await getRepository(searchInput.value)
+  })
+}
       
  
-//JSON.parse(localStorage.getItem('GitHubUser'))
-//JSON.parse(localStorage.getItem('userRepos'))
