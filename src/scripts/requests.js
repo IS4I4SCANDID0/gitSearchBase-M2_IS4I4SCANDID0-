@@ -1,4 +1,7 @@
+// import { renderUserInfo ,renderRepository } from "./profile.js"
+
 export async function surveyUser(userName) {
+  console.log(userName)
   const gitUser = await fetch(`https://api.github.com/users/${userName}`, {
     method: 'GET',
     headers: {
@@ -10,20 +13,20 @@ export async function surveyUser(userName) {
       response.json().then(responseJson => {
         
         localStorage.setItem('GitHubUser', JSON.stringify(responseJson))
+        console.log(responseJson)
         
-        // window.location.replace('./src/pages/profile.html')
+        window.location.replace('./src/pages/profile.html')
+        // renderUserInfo()
       })
       
     } else {
       
-      // window.location.replace('./src/pages/error.html')
+      window.location.replace('./src/pages/error.html')
     }
   })
   .catch(error => console.log(error))
   
-  renderUserInfo()
-
-  renderRepository()
+ 
   
   return gitUser
 }
@@ -45,6 +48,7 @@ export async function getRepository(user) {
   })
   .catch(error => console.log(error))
   
+  // renderRepository()
+
   return gitRepos
 }
-  
