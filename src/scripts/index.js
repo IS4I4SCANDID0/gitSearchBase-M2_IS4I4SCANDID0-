@@ -9,7 +9,16 @@ export function searchUser() {
     event.preventDefault()
     
     if(searchInput.value === ''){
-      alert("Preencha os campos necessários")
+      Toastify({
+        text: 'Por favor digite um texto para fazer a pesquisa',
+        duration: 3000,
+        gravity: 'top',
+        position: 'center',
+        style: {
+          background: '#F5D707',        //  //#D4242C //#F5D707
+          color: '#212529'
+        }
+      }).showToast()
     
     } else {
 
@@ -19,6 +28,8 @@ export function searchUser() {
     }
   })
 }
+      
+    
 
 searchUser()
     

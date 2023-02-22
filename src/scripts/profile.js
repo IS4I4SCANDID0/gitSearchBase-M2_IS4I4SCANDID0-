@@ -38,7 +38,15 @@ export function renderRepository() {
 renderRepository()
 
 
+function backToHome() {
+  const changeUser = document.querySelector('#newSearch')
 
+  changeUser.addEventListener('click', () => {
+    window.location.replace('/')
+  })
+}
+
+backToHome()
 
 
 
