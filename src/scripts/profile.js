@@ -1,119 +1,82 @@
-// import { getRepository } from "./requests.js"
-//fazer com outra lógica de renderização, fazendo uma função para renderiazar o usuário e outra para 
-//renderizar os repositórios **ver a aula do canvas que ensina a fazer o fetch(), fazer com isertAdjasent
 
-export function renderUserInfo() {
-  const mainContainer = document.querySelector('.container')
+// export function renderUserInfo(user) {
+//   const mainContainer = document.querySelector('.container')
   
-  const users = JSON.parse(localStorage.getItem('GitHubUser')) || []
-  console.log(users)
-  
-  users.map(user => {
-    mainContainer.insertAdjacentHTML('beforeend', `
-      <div class="container__user">
-        <div class="user__info">
-          <img src="${user.avatar_url}" alt="">
-          <h2>${user.name}</h2>
-        </div>
-      <button id="newSearch">Trocar de usuário</button>
-      </div> 
-    `)
-  })
-}
-
-renderUserInfo()
-
-
-
-
-
-
-export function renderRepository() {
-  const repositories = JSON.parse(localStorage.getItem('UserRepos'))
-
-  const mainContainer = document.querySelector('.container')
-
-
-  repositories.map(repository => {
-    // console.log(repositories)
-    mainContainer.insertAdjacentHTML('beforeend', `
-        <div class="user__card">
-          <h3>${repository.name}</h3>
-          <p>${repository.full_name} + ${repository.language}</p>
-          <a href="${repository.html_url}">Repositório</a>
-        </div>
-      `)
-  })
-}
-
-renderRepository()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//   console.log(repositories)
-
-
-
-
-
-
-
-
-
-//   repositories.map(repository => {
-//     const cardRepos = createRepository(repository)
-
-//   })
-//   mainContainer.appendChild(cardRepos)
+//   mainContainer.insertAdjacentHTML('beforeend', `
+//     <div class="container__user">
+//       <div class="user__info">
+//         <img src="${user.avatar_url}" alt="">
+//         <h2>${user.name}</h2>
+//       </div>
+//       <button id="newSearch">Nova Busca</button>
+//     </div>
+//     <div class="container__repos">
+//       ${user.repos.map(repo => `
+//         <div class="repo">
+//           <h3>${repo.name}</h3>
+//           <p>${repo.description || 'Sem descrição'}</p>
+//           <a href="${repo.html_url}" target="_blank">Ver repositório</a>
+//         </div>
+//       `).join('')}
+//     </div>
+//   `)
 // }
 
-// function createRepository(repository) {
-//   // const repositories = JSON.parse(localStorage.getItem('userRepos'))
-//   // console.log(repositories)
+// function newUserSearch() {
+//   const newSearchButton = document.querySelector('#newSearch')
+  
+//   if (newSearchButton) {
+    
+//     newSearchButton.addEventListener('click', () => {
+//       localStorage.removeItem('GitHubUser')
+      
+      
 
-//   const userContainer = document.createElement('div')
-//   userContainer.classList.add('container__user')
-
-//   const user = document.createElement('div')
-//   user.classList.add('user__info')
-
-//   const userAvatar = document.createElement('img')
-//   userAvatar.src = repository.avatar_url
-
-//   const userName = document.createElement('h2')
-//   userName.innerText = repository.login
-
-//   user.append(userAvatar, userName)
-
-//   // const homePageBtn = document.createElement('button')
-//   // homePageBtn.id = 'newSearch'
-//   // homePageBtn.innerText = 'Trocar de usuário'
-
-//   userContainer.append(user)
-
-//   const card = document.createElement('div')
-//   card.classList.add('user__card')
-
-//   const nameProject = document.createElement('h3')
-//   nameProject.innerText = repository.name
-
-//   const description = document.createElement('p')
-//   description.innerText = repository.full_name
-
-//   // const link = document.createElement('a')
-//   // link.href(html_url)
-//   // link.innerText = 'Repositório'
-
-//   return userContainer
+//       window.location.replace('../../index.html')
+//     })
+//   }
 // }
+
+// newUserSearch()
+// export function renderRepository() {
+//   const reposContainer = document.querySelector('.container__repos')
+  
+//   const repos = JSON.parse(localStorage.getItem('UserRepos'))
+  
+//   if (repos) {
+    
+//     repos.map(repo => {
+//       reposContainer.insertAdjacentHTML('beforeend', `
+//         <div class="repo">
+//           <h3>${repo.name}</h3>
+//           <p>${repo.description}</p>
+//         </div>
+//       `)
+//     })
+//   }
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
