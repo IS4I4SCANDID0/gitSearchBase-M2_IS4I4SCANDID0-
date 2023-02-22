@@ -1,11 +1,9 @@
-// import { getRepository } from "./requests.js"
-//fazer com outra lógica de renderização, fazendo uma função para renderiazar o usuário e outra para 
-//renderizar os repositórios **ver a aula do canvas que ensina a fazer o fetch(), fazer com isertAdjasent
+
 
 export function renderUserInfo() {
   const mainContainer = document.querySelector('.container')
   
-  const users = JSON.parse(localStorage.getItem('GitHubUser')) || []
+  const users = JSON.parse(localStorage.getItem('GitHubUser')) 
   console.log(users)
   
   users.map(user => {
@@ -21,14 +19,14 @@ export function renderUserInfo() {
   })
 }
 
-renderUserInfo()
+
 
   
 
 export function renderRepository() {
   const mainContainer = document.querySelector('.container')
   
-  const repositories = JSON.parse(localStorage.getItem('userRepos')) || []
+  const repositories = JSON.parse(localStorage.getItem('userRepos')) 
   console.log(repositories)
   
   repositories.map(repository => {
@@ -42,7 +40,7 @@ export function renderRepository() {
   })
 } 
 
-renderRepository()
+
 
 
 

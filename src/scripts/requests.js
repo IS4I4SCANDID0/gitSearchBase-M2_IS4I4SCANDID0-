@@ -39,6 +39,9 @@ export async function surveyUser(userName) {
   })
   .catch(error => console.log(error))
   
+  renderUserInfo()
+
+  renderRepository()
   
   return gitUser
 }
