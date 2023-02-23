@@ -49,15 +49,16 @@ p > span {
 
 
 .container__image {
-  width: 35%;
+  width: 30%;
   height: 386px;
   position: relative;
+  /* border: solid 1px royalblue; */
 }
 
 .image--card-cherry {
   position: absolute;
-  top: 0;
-  left: 40px;
+  top: 10px;
+  left: 30px;
   z-index: 2;
 }
 
@@ -72,6 +73,6 @@ p > span {
 .image--card-alert {
   position: absolute;
   z-index: 3;
-  top: 100px;
+  top: 120px;
   right: 170px;
 }

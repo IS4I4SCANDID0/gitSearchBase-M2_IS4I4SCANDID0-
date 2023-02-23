@@ -1,12 +1,12 @@
 
-export function renderUserInfo() {
+function renderUserInfo() {
   const users = JSON.parse(localStorage.getItem('GitHubUser'))
   
   const mainContainer = document.querySelector('.container')
   
   mainContainer.innerHTML = ''
 
-  mainContainer.insertAdjacentHTML('beforeend', `
+  mainContainer.insertAdjacentHTML('afterbegin', `
     <div class="container__user">
       <div class="user__info">
         <img src="${users.avatar_url}" alt="">
@@ -20,22 +20,18 @@ export function renderUserInfo() {
 renderUserInfo()
 
 
-export function renderRepository() {
+function renderRepository() {
   const repositories = JSON.parse(localStorage.getItem('UserRepos'))
-  
-  const mainContainer = document.querySelector('.container')
 
-  // mainContainer.insertAdjacentHTML('beforeend', `<ul class="container__reposCards"></ul>`)
-  
-  // const userCards = document.querySelector('.container__reposCards')
+  const mainContainer = document.querySelector('.container')
   
   repositories.map(repository => {
     mainContainer.insertAdjacentHTML('beforeend', `
-      <li class="user__card">
+      <div class="user__card">
         <h3>${repository.name}</h3>
-        <p>${repository.full_name} ${repository.language}</p>
-        <a href="${repository.html_url}">Repositório</a>
-      </li>
+        <p> ${repository.description} ${repository.full_name}  ${repository.language}</p>
+        <a href="${repository.html_url}" target="_blank">Repositório</a>
+      </div>
     `)
   })
 }
@@ -43,17 +39,15 @@ export function renderRepository() {
 renderRepository()
 
 
-function backToHome() {
+function backToHomePage() {
   const changeUser = document.querySelector('#newSearch')
 
   changeUser.addEventListener('click', () => {
     window.location.replace('/')
-
-    // localStorage.clear()
   })
 }
 
-backToHome()
+backToHomePage()
 
 
 

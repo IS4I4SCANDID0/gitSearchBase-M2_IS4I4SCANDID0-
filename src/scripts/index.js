@@ -15,16 +15,16 @@ export function searchUser() {
         gravity: 'top',
         position: 'center',
         style: {
-          background: '#ffffff',        //  //#D4242C //#F5D707
+          background: '#ffffff',       
           color: '#212529'
         }
       }).showToast()
     
     } else {
 
-      await surveyUser(searchInput.value)
-    
       await getRepository(searchInput.value)
+      
+      await surveyUser(searchInput.value)
     }
   })
 }

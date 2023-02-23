@@ -22,6 +22,7 @@
   color: var(--color-grey-7);
   font-size: 2rem;
   font-weight: 600;
+  cursor: default;
 }
 
 
@@ -29,6 +30,7 @@
   color: var(--color-grey-7);
   font-weight: 400;
   font-size: 1.25rem;
+  cursor: default;
 }
 
 .container__login {
@@ -48,7 +50,7 @@
   color: var(--color-grey-7);
   font-size: 1.25rem;
   font-weight: 500;
-  margin-top: 5.2rem;
+  margin: 5.2rem 10.375rem 0 0;
 }
 
 
@@ -81,6 +83,7 @@ input:focus {
   outline: none;
   padding-left: 0.5rem;
   transition: 1s ease;
+  background-color: var(--background-input);
 }
 
 form > button {
@@ -93,4 +96,5 @@ form > button {
   height: 2.375rem;
   width: 100%;
   padding: 0.7rem;
+  cursor: pointer;
 }
