@@ -1,8 +1,9 @@
+
 export function renderUserInfo() {
   const users = JSON.parse(localStorage.getItem('GitHubUser'))
-  // console.log(users)
+  
   const mainContainer = document.querySelector('.container')
-
+  
   mainContainer.innerHTML = ''
 
   mainContainer.insertAdjacentHTML('beforeend', `
@@ -15,23 +16,27 @@ export function renderUserInfo() {
     </div> 
   `)
 }
+
 renderUserInfo()
 
 
 export function renderRepository() {
-  const repositories = JSON.parse(localStorage.getItem('userRepos'))
-
+  const repositories = JSON.parse(localStorage.getItem('UserRepos'))
+  
   const mainContainer = document.querySelector('.container')
 
+  // mainContainer.insertAdjacentHTML('beforeend', `<ul class="container__reposCards"></ul>`)
+  
+  // const userCards = document.querySelector('.container__reposCards')
+  
   repositories.map(repository => {
     mainContainer.insertAdjacentHTML('beforeend', `
-      <div class="user__card">
+      <li class="user__card">
         <h3>${repository.name}</h3>
         <p>${repository.full_name} ${repository.language}</p>
         <a href="${repository.html_url}">Repositório</a>
-      </div>
+      </li>
     `)
-    // mainContainer.innerHTML = ''
   })
 }
 
@@ -43,6 +48,8 @@ function backToHome() {
 
   changeUser.addEventListener('click', () => {
     window.location.replace('/')
+
+    // localStorage.clear()
   })
 }
 
