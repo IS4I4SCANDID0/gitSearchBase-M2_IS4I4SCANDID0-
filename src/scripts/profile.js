@@ -29,7 +29,7 @@ function renderRepository() {
     mainContainer.insertAdjacentHTML('beforeend', `
       <div class="user__card">
         <h3>${repository.name}</h3>
-        <p> ${repository.description} ${repository.full_name}  ${repository.language}</p>
+        <p> ${repository.description} ${repository.full_name} ${repository.language}</p>
         <a href="${repository.html_url}" target="_blank">Repositório</a>
       </div>
     `)

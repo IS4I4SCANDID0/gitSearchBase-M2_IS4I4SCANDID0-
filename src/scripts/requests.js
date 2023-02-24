@@ -1,7 +1,4 @@
-// import { renderUserInfo ,renderRepository } from "./profile.js"
-
 export async function surveyUser(userName) {
-  console.log(userName)
   const gitUser = await fetch(`https://api.github.com/users/${userName}`, {
     method: 'GET',
     headers: {
@@ -31,7 +28,6 @@ export async function surveyUser(userName) {
 
 
 export async function getRepository(user) {
-
   const gitRepos = await fetch(`https://api.github.com/users/${user}/repos`, {
     method: 'GET',
     headers: {
@@ -48,3 +44,4 @@ export async function getRepository(user) {
   
   return gitRepos
 }
+
