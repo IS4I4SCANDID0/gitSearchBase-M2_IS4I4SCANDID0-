@@ -21,7 +21,6 @@ export function searchUser() {
       }).showToast()
     
     } else {
-
       await getRepository(searchInput.value)
       
       await surveyUser(searchInput.value)
@@ -30,6 +29,7 @@ export function searchUser() {
 }
 
 searchUser()
+
     
 
     

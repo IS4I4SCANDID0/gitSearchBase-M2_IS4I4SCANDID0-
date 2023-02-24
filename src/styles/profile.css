@@ -1,11 +1,10 @@
 .container {
   display: flex;
   align-items: center;
-  padding:  3rem 0 0.2rem 0;
-  flex-wrap: wrap;
-  width: 900px;
-  margin: 2rem auto;
-  padding: 0 auto;
+  flex-direction: column;
+  border: solid 1px red;
+  padding: 1rem;
+  width: 100%;
 }
 
 
@@ -13,23 +12,26 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 1rem;
-  width: 92%;
-  margin: 0 2rem 3rem 2rem;
+  width: 100%;
+  gap: 0.5rem;
+  /* margin: 0 2rem 3rem 2rem; */
+  margin-bottom: 3rem;
+
 }
 
 
 .user__info{
   display: flex;
   align-items: center;
-  gap: 1.5rem;
+  gap: 0.3rem;
+  height: 3.75rem;
 }
 
 
 .user__info > img {
-  width: 5.625rem;
-  height: 5.625rem;
-  border: solid 0.2188rem var(--color-brand-2);
+  width: 3.125rem;
+  height: 3.125rem;
+  border: solid 0.125rem var(--color-brand-2);
   border-radius: 100%;
   object-fit: cover;
 }
@@ -39,10 +41,9 @@
 
 .user__info > h2 {
   color: var(--color-grey-7);
-  font-size: 1.45rem;
+  font-size: 1rem;
   font-weight: 700;
   text-transform: capitalize;
-  cursor: default;
 }
 
 
@@ -51,23 +52,22 @@
   background-color: var(--backg-btn-profile);
   border: none;
   color: var(--color-grey-7);
-  font-size: 0.875rem;
+  font-size: 0.75rem;
   font-weight: 600;
-  padding: 0.7rem 1rem;
+  padding: 0.3rem;
   border-radius: var(--radius-card);
-  cursor: pointer;
 }
 
 
 .user__card {
   border: solid 0.0938rem var(--color-place-tx-card);
-  width: 397px;
+  width: 100%;
   height: 250px;
-  padding: 1.3rem;
+  padding: 1rem;
   border-radius: var(--radius-card);
   color: var(--color-place-tx-card);
   font-size: 0.875rem;
-  margin: 1rem 0 1rem 2rem; 
+  margin: 1rem 0 1rem; 
 }
 
 .user__card:hover {
@@ -78,16 +78,15 @@
 
 .user__card > h3 {
   color: var(--color-grey-7);
-  font-size: 1.25rem;
+  font-size: 0.9375rem;
   font-weight: 500;
   margin-bottom: 1.2rem;
-  cursor: default;
 }
 
 
 .user__card > p {
   margin-bottom: 1.5rem;
-  cursor: default;
+  font-size: 0.7rem;
 }
 
 
@@ -108,3 +107,116 @@
 }
 
 
+
+@media(min-width: 769px) {
+
+  .container {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding:  3rem 0 0.2rem 0;
+    width: 900px;
+    margin: 2rem auto;
+    padding: 0 auto;
+  }
+  
+  
+  .container__user {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    width: 92%;
+    margin: 0 2rem 3rem 2rem;
+  }
+  
+  
+  .user__info{
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  
+  
+  .user__info > img {
+    width: 5.625rem;
+    height: 5.625rem;
+    border: solid 0.2188rem var(--color-brand-2);
+    border-radius: 100%;
+    object-fit: cover;
+  }
+    
+  
+  
+  
+  .user__info > h2 {
+    color: var(--color-grey-7);
+    font-size: 1.45rem;
+    font-weight: 700;
+    text-transform: capitalize;
+    cursor: default;
+  }
+  
+  
+  
+  .container__user > button {
+    background-color: var(--backg-btn-profile);
+    border: none;
+    color: var(--color-grey-7);
+    font-size: 0.875rem;
+    font-weight: 600;
+    padding: 0.7rem 1rem;
+    border-radius: var(--radius-card);
+    cursor: pointer;
+  }
+  
+  
+  .user__card {
+    border: solid 0.0938rem var(--color-place-tx-card);
+    width: 397px;
+    height: 250px;
+    padding: 1.3rem;
+    border-radius: var(--radius-card);
+    color: var(--color-place-tx-card);
+    font-size: 0.875rem;
+    margin: 1rem 0 1rem 2rem; 
+  }
+  
+  .user__card:hover {
+    border: solid 2px var(--color-grey-7);
+    transition: 1s ease;
+  }
+  
+  
+  .user__card > h3 {
+    color: var(--color-grey-7);
+    font-size: 1.25rem;
+    font-weight: 500;
+    margin-bottom: 1.2rem;
+    cursor: default;
+  }
+  
+  
+  .user__card > p {
+    margin-bottom: 1.5rem;
+    cursor: default;
+  }
+  
+  
+  .user__card > a {
+    color: var(--color-grey-7);
+    font-size: 0.875rem;
+    font-weight: 500;
+    border: solid 1px var(--color-grey-7);
+    border-radius: var(--radius-linkBtn);
+    padding: 0.5rem;
+  }
+  
+  
+  .user__card > a:hover {
+    border: solid 1px var(--color-brand-2);
+    background-color: var(--color-brand-2);
+    transition: 1s ease;
+  }  
+}
