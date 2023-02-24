@@ -43,7 +43,7 @@ function backToHomePage() {
   const changeUser = document.querySelector('#newSearch')
 
   changeUser.addEventListener('click', () => {
-    window.location.replace('/')
+    window.location.replace('/index.html')
   })
 }
 
