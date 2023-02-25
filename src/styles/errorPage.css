@@ -5,6 +5,7 @@
   align-items: center;
   width: 100%;
   height: 100%;
+  margin-top: auto;
 }
 
 .container__errorDesc {
@@ -13,7 +14,7 @@
   flex-direction: column;
   justify-content: center;
   height: 260px;
-  padding: 1rem;
+  width: 260px;
 }
 
 
@@ -52,8 +53,8 @@ p > span {
 
 
 .container__image {
-  width: 90%;
-  height: 276px;
+  width: 260px;
+  height: 250px;
   position: relative;
 }
 
@@ -62,8 +63,8 @@ p > span {
   top: 0;
   left: 0;
   z-index: 2;
-  width: 270px;
-  height: 260px;
+  width: 240px;
+  height: 230px;
 }
 
 .image--card-purple {
@@ -71,8 +72,8 @@ p > span {
   bottom: 0;
   right: 0;
   z-index: 1;
-  width: 270px;
-  height: 260px;
+  width: 240px;
+  height: 230px;
 }
 
 
@@ -81,6 +82,7 @@ p > span {
   z-index: 3;
   top: 55px;
   right: 88px;
+  width: 100px;
 }
 
 
@@ -93,6 +95,7 @@ p > span {
     align-items: center;
     width: 100%;
     height: 657px;
+    margin: 0;
   }
   
   .container__errorDesc {
@@ -165,7 +168,8 @@ p > span {
   .image--card-alert {
     position: absolute;
     z-index: 3;
-    top: 120px;
-    right: 170px;
+    top: 100px;
+    right: 130px;
+    width: 200px;
   }
 }
