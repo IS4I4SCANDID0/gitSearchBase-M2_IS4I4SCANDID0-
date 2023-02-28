@@ -13,7 +13,7 @@ export function searchUser() {
         text: 'Por favor digite um nome de usuário para fazer a pesquisa',
         duration: 3000,
         gravity: 'top',
-        position: 'center',
+        position: 'left',
         style: {
           background: '#ffffff',       
           color: '#212529'
